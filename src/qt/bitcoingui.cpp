@@ -79,9 +79,11 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 {
     resize(850, 550);
     setWindowTitle(tr("Demoncoin") + " - " + tr("Wallet"));
-#ifndef Q_OS_MAC
-    qApp->setWindowIcon(QIcon(":icons/bitcoin"));
+	qApp->setStyleSheet("QMainWindow { background-image:url(:images/bkg);border:none; }");
+#ifndef Q_OS_MAC 
+	qApp->setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
+
 #else
     setUnifiedTitleAndToolBarOnMac(true);
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
